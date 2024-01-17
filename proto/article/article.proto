@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package article;
+
+option go_package = ".";
+
+import "google/protobuf/timestamp.proto";
+
+service ArticleService {
+  rpc CreateArticle(CreateArticleRequest) returns (CreateArticleResponse);
+  rpc GetArticle(GetArticleRequest) returns (GetArticleResponse);
+  rpc ListArticles(ListArticlesRequest) returns (ListArticlesResponse);
+  rpc UpdateArticle(UpdateArticleRequest) returns (UpdateArticleResponse);
+  rpc DeleteArticle(DeleteArticleRequest) returns (DeleteArticleResponse);
+}
+
+message Article {
+  int32 id = 1;
+  string title = 2;
+  string url = 3;
+  int32 bookmarkCount = 4;
+  google.protobuf.Timestamp created_at = 5;
+  google.protobuf.Timestamp updated_at = 6;
+}
+
+message CreateArticleRequest {
+  Article article = 1;
+}
+
+message CreateArticleResponse {
+  Article article = 1;
+}
+
+message GetArticleRequest {
+  int32 id = 1;
+}
+
+message GetArticleResponse {
+  Article article = 1;
+}
+
+message ListArticlesRequest {
+}
+
+message ListArticlesResponse {
+  repeated Article articles = 1;
+}
+
+message UpdateArticleRequest {
+  Article article = 1;
+}
+
+message UpdateArticleResponse {
+  bool success = 1;
+}
+
+message DeleteArticleRequest {
+  uint64 id = 1;
+}
+
+message DeleteArticleResponse {
+  bool success = 1;
+}
