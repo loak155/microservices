@@ -11,6 +11,7 @@ import (
 	"syscall"
 
 	"github.com/loak155/microservices/services/user/db"
+	"github.com/loak155/microservices/services/user/interceptor"
 	"github.com/loak155/microservices/services/user/repository"
 	"github.com/loak155/microservices/services/user/router"
 	"github.com/loak155/microservices/services/user/usecase"
@@ -31,7 +32,9 @@ func main() {
 	}
 
 	ctx, cancel := context.WithCancel(context.Background())
-	server := grpc.NewServer()
+	server := grpc.NewServer(
+		grpc.UnaryInterceptor(interceptor.LoggingInterceptor1),
+	)
 	go func() {
 		defer server.GracefulStop()
 		<-ctx.Done()
