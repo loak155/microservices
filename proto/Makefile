@@ -1,8 +1,11 @@
 .PHONY: protoc
 protoc:
-	protoc -I. -I./third_party --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative user/*.proto
-	protoc -I. -I./third_party --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative auth/*.proto
-	protoc -I. -I./third_party --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative article/*.proto
-	# protoc -I. -I./third_party --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt==paths=source_relative user/*.proto
-	# protoc -I. -I./third_party --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt==paths=source_relative auth/*.proto
-	# protoc -I. -I./third_party --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt==paths=source_relative article/*.proto
+	for file in $$(find . -name '*.proto' -not -path './third_party/*'); do \
+		protoc \
+		-I $$(dirname $$file) \
+		-I ./third_party \
+		--go_out=:$$(dirname $$file) --go_opt=paths=source_relative \
+		--go-grpc_out=:$$(dirname $$file) --go-grpc_opt=paths=source_relative \
+		--grpc-gateway_out=:$$(dirname $$file) --grpc-gateway_opt=paths=source_relative \
+		$$file; \
+	done
