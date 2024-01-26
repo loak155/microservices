@@ -4,10 +4,41 @@ package auth;
 
 option go_package = ".";
 
+import "google/api/annotations.proto";
+import "user/user.proto";
+
 service AuthService {
+  rpc Singup(SingupRequest) returns (SingupResponse){
+    option (google.api.http) = {
+      post: "/auth/signup"
+      body: "*"
+    };
+  }
+  rpc Signin(SigninRequest) returns (SigninResponse){
+    option (google.api.http) = {
+      post: "/auth/signin"
+      body: "*"
+    };
+  }
   rpc GenerateToken(GenerateTokenRequest) returns (GenerateTokenResponse);
   rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
+}
+
+message SingupRequest {
+ user.User user = 1;
+}
+
+message SingupResponse {
+  user.User user = 1;
+}
+
+message SigninRequest {
+  user.User user = 1;
+}
+
+message SigninResponse {
+  string token = 1;
 }
 
 message GenerateTokenRequest {
