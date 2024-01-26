@@ -4,7 +4,7 @@
 // - protoc             v4.25.1
 // source: article/article.proto
 
-package __
+package article
 
 import (
 	context "context"

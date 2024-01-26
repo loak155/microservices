@@ -4,9 +4,10 @@
 // 	protoc        v4.25.1
 // source: auth/auth.proto
 
-package __
+package auth
 
 import (
+	user "github.com/loak155/microservices/proto/user"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
@@ -26,7 +27,7 @@ type SignupRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	User *User `protobuf:"bytes,1,opt,name=user,proto3" json:"user,omitempty"`
+	User *user.User `protobuf:"bytes,1,opt,name=user,proto3" json:"user,omitempty"`
 }
 
 func (x *SignupRequest) Reset() {
@@ -61,7 +62,7 @@ func (*SignupRequest) Descriptor() ([]byte, []int) {
 	return file_auth_auth_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *SignupRequest) GetUser() *User {
+func (x *SignupRequest) GetUser() *user.User {
 	if x != nil {
 		return x.User
 	}
@@ -73,7 +74,7 @@ type SignupResponse struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	User *User `protobuf:"bytes,1,opt,name=user,proto3" json:"user,omitempty"`
+	User *user.User `protobuf:"bytes,1,opt,name=user,proto3" json:"user,omitempty"`
 }
 
 func (x *SignupResponse) Reset() {
@@ -108,7 +109,7 @@ func (*SignupResponse) Descriptor() ([]byte, []int) {
 	return file_auth_auth_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *SignupResponse) GetUser() *User {
+func (x *SignupResponse) GetUser() *user.User {
 	if x != nil {
 		return x.User
 	}
@@ -120,7 +121,7 @@ type SigninRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	User *User `protobuf:"bytes,1,opt,name=user,proto3" json:"user,omitempty"`
+	User *user.User `protobuf:"bytes,1,opt,name=user,proto3" json:"user,omitempty"`
 }
 
 func (x *SigninRequest) Reset() {
@@ -155,7 +156,7 @@ func (*SigninRequest) Descriptor() ([]byte, []int) {
 	return file_auth_auth_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *SigninRequest) GetUser() *User {
+func (x *SigninRequest) GetUser() *user.User {
 	if x != nil {
 		return x.User
 	}
@@ -552,7 +553,10 @@ var file_auth_auth_proto_rawDesc = []byte{
 	0x68, 0x2e, 0x52, 0x65, 0x66, 0x72, 0x65, 0x73, 0x68, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x52, 0x65,
 	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x52, 0x65, 0x66,
 	0x72, 0x65, 0x73, 0x68, 0x54, 0x6f, 0x6b, 0x65, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x42, 0x03, 0x5a, 0x01, 0x2e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f,
+	0x6c, 0x6f, 0x61, 0x6b, 0x31, 0x35, 0x35, 0x2f, 0x6d, 0x69, 0x63, 0x72, 0x6f, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x61, 0x75, 0x74, 0x68,
+	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -579,7 +583,7 @@ var file_auth_auth_proto_goTypes = []interface{}{
 	(*ValidateTokenResponse)(nil), // 7: auth.ValidateTokenResponse
 	(*RefreshTokenRequest)(nil),   // 8: auth.RefreshTokenRequest
 	(*RefreshTokenResponse)(nil),  // 9: auth.RefreshTokenResponse
-	(*User)(nil),                  // 10: user.User
+	(*user.User)(nil),             // 10: user.User
 }
 var file_auth_auth_proto_depIdxs = []int32{
 	10, // 0: auth.SignupRequest.user:type_name -> user.User
@@ -607,7 +611,6 @@ func file_auth_auth_proto_init() {
 	if File_auth_auth_proto != nil {
 		return
 	}
-	file_user_user_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_auth_auth_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*SignupRequest); i {

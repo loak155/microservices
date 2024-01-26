@@ -2,11 +2,11 @@
 // source: user/user.proto
 
 /*
-Package __ is a reverse proxy.
+Package user is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package __
+package user
 
 import (
 	"context"
