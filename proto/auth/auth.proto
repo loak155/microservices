@@ -1,8 +1,7 @@
 syntax = "proto3";
 
-package auth;
+package loak155.microservices.proto.auth;
 
-// option go_package = ".";
 option go_package = "github.com/loak155/microservices/proto/auth";
 
 import "google/api/annotations.proto";

@@ -19,12 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	UserService_CreateUser_FullMethodName     = "/user.UserService/CreateUser"
-	UserService_GetUser_FullMethodName        = "/user.UserService/GetUser"
-	UserService_GetUserByEmail_FullMethodName = "/user.UserService/GetUserByEmail"
-	UserService_ListUsers_FullMethodName      = "/user.UserService/ListUsers"
-	UserService_UpdateUser_FullMethodName     = "/user.UserService/UpdateUser"
-	UserService_DeleteUser_FullMethodName     = "/user.UserService/DeleteUser"
+	UserService_CreateUser_FullMethodName     = "/loak155.microservices.proto.user.UserService/CreateUser"
+	UserService_GetUser_FullMethodName        = "/loak155.microservices.proto.user.UserService/GetUser"
+	UserService_GetUserByEmail_FullMethodName = "/loak155.microservices.proto.user.UserService/GetUserByEmail"
+	UserService_ListUsers_FullMethodName      = "/loak155.microservices.proto.user.UserService/ListUsers"
+	UserService_UpdateUser_FullMethodName     = "/loak155.microservices.proto.user.UserService/UpdateUser"
+	UserService_DeleteUser_FullMethodName     = "/loak155.microservices.proto.user.UserService/DeleteUser"
 )
 
 // UserServiceClient is the client API for UserService service.
@@ -261,7 +261,7 @@ func _UserService_DeleteUser_Handler(srv interface{}, ctx context.Context, dec f
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var UserService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "user.UserService",
+	ServiceName: "loak155.microservices.proto.user.UserService",
 	HandlerType: (*UserServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

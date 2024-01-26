@@ -1,8 +1,7 @@
 syntax = "proto3";
 
-package article;
+package loak155.microservices.proto.article;
 
-// option go_package = ".";
 option go_package = "github.com/loak155/microservices/proto/article";
 
 import "google/protobuf/timestamp.proto";

@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ArticleService_CreateArticle_FullMethodName = "/article.ArticleService/CreateArticle"
-	ArticleService_GetArticle_FullMethodName    = "/article.ArticleService/GetArticle"
-	ArticleService_ListArticles_FullMethodName  = "/article.ArticleService/ListArticles"
-	ArticleService_UpdateArticle_FullMethodName = "/article.ArticleService/UpdateArticle"
-	ArticleService_DeleteArticle_FullMethodName = "/article.ArticleService/DeleteArticle"
+	ArticleService_CreateArticle_FullMethodName = "/loak155.microservices.proto.article.ArticleService/CreateArticle"
+	ArticleService_GetArticle_FullMethodName    = "/loak155.microservices.proto.article.ArticleService/GetArticle"
+	ArticleService_ListArticles_FullMethodName  = "/loak155.microservices.proto.article.ArticleService/ListArticles"
+	ArticleService_UpdateArticle_FullMethodName = "/loak155.microservices.proto.article.ArticleService/UpdateArticle"
+	ArticleService_DeleteArticle_FullMethodName = "/loak155.microservices.proto.article.ArticleService/DeleteArticle"
 )
 
 // ArticleServiceClient is the client API for ArticleService service.
@@ -228,7 +228,7 @@ func _ArticleService_DeleteArticle_Handler(srv interface{}, ctx context.Context,
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ArticleService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "article.ArticleService",
+	ServiceName: "loak155.microservices.proto.article.ArticleService",
 	HandlerType: (*ArticleServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
