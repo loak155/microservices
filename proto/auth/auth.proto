@@ -8,7 +8,7 @@ import "google/api/annotations.proto";
 import "user/user.proto";
 
 service AuthService {
-  rpc Singup(SingupRequest) returns (SingupResponse){
+  rpc Signup(SignupRequest) returns (SignupResponse){
     option (google.api.http) = {
       post: "/auth/signup"
       body: "*"
@@ -25,11 +25,11 @@ service AuthService {
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
 }
 
-message SingupRequest {
+message SignupRequest {
  user.User user = 1;
 }
 
-message SingupResponse {
+message SignupResponse {
   user.User user = 1;
 }
 

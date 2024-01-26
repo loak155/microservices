@@ -21,7 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type SingupRequest struct {
+type SignupRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -29,8 +29,8 @@ type SingupRequest struct {
 	User *User `protobuf:"bytes,1,opt,name=user,proto3" json:"user,omitempty"`
 }
 
-func (x *SingupRequest) Reset() {
-	*x = SingupRequest{}
+func (x *SignupRequest) Reset() {
+	*x = SignupRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_auth_auth_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -38,13 +38,13 @@ func (x *SingupRequest) Reset() {
 	}
 }
 
-func (x *SingupRequest) String() string {
+func (x *SignupRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SingupRequest) ProtoMessage() {}
+func (*SignupRequest) ProtoMessage() {}
 
-func (x *SingupRequest) ProtoReflect() protoreflect.Message {
+func (x *SignupRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_auth_auth_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -56,19 +56,19 @@ func (x *SingupRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SingupRequest.ProtoReflect.Descriptor instead.
-func (*SingupRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use SignupRequest.ProtoReflect.Descriptor instead.
+func (*SignupRequest) Descriptor() ([]byte, []int) {
 	return file_auth_auth_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *SingupRequest) GetUser() *User {
+func (x *SignupRequest) GetUser() *User {
 	if x != nil {
 		return x.User
 	}
 	return nil
 }
 
-type SingupResponse struct {
+type SignupResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -76,8 +76,8 @@ type SingupResponse struct {
 	User *User `protobuf:"bytes,1,opt,name=user,proto3" json:"user,omitempty"`
 }
 
-func (x *SingupResponse) Reset() {
-	*x = SingupResponse{}
+func (x *SignupResponse) Reset() {
+	*x = SignupResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_auth_auth_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -85,13 +85,13 @@ func (x *SingupResponse) Reset() {
 	}
 }
 
-func (x *SingupResponse) String() string {
+func (x *SignupResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SingupResponse) ProtoMessage() {}
+func (*SignupResponse) ProtoMessage() {}
 
-func (x *SingupResponse) ProtoReflect() protoreflect.Message {
+func (x *SignupResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_auth_auth_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -103,12 +103,12 @@ func (x *SingupResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SingupResponse.ProtoReflect.Descriptor instead.
-func (*SingupResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use SignupResponse.ProtoReflect.Descriptor instead.
+func (*SignupResponse) Descriptor() ([]byte, []int) {
 	return file_auth_auth_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *SingupResponse) GetUser() *User {
+func (x *SignupResponse) GetUser() *User {
 	if x != nil {
 		return x.User
 	}
@@ -498,10 +498,10 @@ var file_auth_auth_proto_rawDesc = []byte{
 	0x6f, 0x12, 0x04, 0x61, 0x75, 0x74, 0x68, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f,
 	0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x0f, 0x75, 0x73, 0x65, 0x72, 0x2f, 0x75, 0x73, 0x65, 0x72,
-	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x2f, 0x0a, 0x0d, 0x53, 0x69, 0x6e, 0x67, 0x75, 0x70,
+	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x2f, 0x0a, 0x0d, 0x53, 0x69, 0x67, 0x6e, 0x75, 0x70,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1e, 0x0a, 0x04, 0x75, 0x73, 0x65, 0x72, 0x18,
 	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0a, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x55, 0x73, 0x65,
-	0x72, 0x52, 0x04, 0x75, 0x73, 0x65, 0x72, 0x22, 0x30, 0x0a, 0x0e, 0x53, 0x69, 0x6e, 0x67, 0x75,
+	0x72, 0x52, 0x04, 0x75, 0x73, 0x65, 0x72, 0x22, 0x30, 0x0a, 0x0e, 0x53, 0x69, 0x67, 0x6e, 0x75,
 	0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1e, 0x0a, 0x04, 0x75, 0x73, 0x65,
 	0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0a, 0x2e, 0x75, 0x73, 0x65, 0x72, 0x2e, 0x55,
 	0x73, 0x65, 0x72, 0x52, 0x04, 0x75, 0x73, 0x65, 0x72, 0x22, 0x2f, 0x0a, 0x0d, 0x53, 0x69, 0x67,
@@ -529,9 +529,9 @@ var file_auth_auth_proto_rawDesc = []byte{
 	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x32, 0x84, 0x03, 0x0a, 0x0b, 0x41,
 	0x75, 0x74, 0x68, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x4c, 0x0a, 0x06, 0x53, 0x69,
-	0x6e, 0x67, 0x75, 0x70, 0x12, 0x13, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x53, 0x69, 0x6e, 0x67,
+	0x67, 0x6e, 0x75, 0x70, 0x12, 0x13, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x53, 0x69, 0x67, 0x6e,
 	0x75, 0x70, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x14, 0x2e, 0x61, 0x75, 0x74, 0x68,
-	0x2e, 0x53, 0x69, 0x6e, 0x67, 0x75, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x2e, 0x53, 0x69, 0x67, 0x6e, 0x75, 0x70, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
 	0x17, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x11, 0x3a, 0x01, 0x2a, 0x22, 0x0c, 0x2f, 0x61, 0x75, 0x74,
 	0x68, 0x2f, 0x73, 0x69, 0x67, 0x6e, 0x75, 0x70, 0x12, 0x4c, 0x0a, 0x06, 0x53, 0x69, 0x67, 0x6e,
 	0x69, 0x6e, 0x12, 0x13, 0x2e, 0x61, 0x75, 0x74, 0x68, 0x2e, 0x53, 0x69, 0x67, 0x6e, 0x69, 0x6e,
@@ -569,8 +569,8 @@ func file_auth_auth_proto_rawDescGZIP() []byte {
 
 var file_auth_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_auth_auth_proto_goTypes = []interface{}{
-	(*SingupRequest)(nil),         // 0: auth.SingupRequest
-	(*SingupResponse)(nil),        // 1: auth.SingupResponse
+	(*SignupRequest)(nil),         // 0: auth.SignupRequest
+	(*SignupResponse)(nil),        // 1: auth.SignupResponse
 	(*SigninRequest)(nil),         // 2: auth.SigninRequest
 	(*SigninResponse)(nil),        // 3: auth.SigninResponse
 	(*GenerateTokenRequest)(nil),  // 4: auth.GenerateTokenRequest
@@ -582,15 +582,15 @@ var file_auth_auth_proto_goTypes = []interface{}{
 	(*User)(nil),                  // 10: user.User
 }
 var file_auth_auth_proto_depIdxs = []int32{
-	10, // 0: auth.SingupRequest.user:type_name -> user.User
-	10, // 1: auth.SingupResponse.user:type_name -> user.User
+	10, // 0: auth.SignupRequest.user:type_name -> user.User
+	10, // 1: auth.SignupResponse.user:type_name -> user.User
 	10, // 2: auth.SigninRequest.user:type_name -> user.User
-	0,  // 3: auth.AuthService.Singup:input_type -> auth.SingupRequest
+	0,  // 3: auth.AuthService.Signup:input_type -> auth.SignupRequest
 	2,  // 4: auth.AuthService.Signin:input_type -> auth.SigninRequest
 	4,  // 5: auth.AuthService.GenerateToken:input_type -> auth.GenerateTokenRequest
 	6,  // 6: auth.AuthService.ValidateToken:input_type -> auth.ValidateTokenRequest
 	8,  // 7: auth.AuthService.RefreshToken:input_type -> auth.RefreshTokenRequest
-	1,  // 8: auth.AuthService.Singup:output_type -> auth.SingupResponse
+	1,  // 8: auth.AuthService.Signup:output_type -> auth.SignupResponse
 	3,  // 9: auth.AuthService.Signin:output_type -> auth.SigninResponse
 	5,  // 10: auth.AuthService.GenerateToken:output_type -> auth.GenerateTokenResponse
 	7,  // 11: auth.AuthService.ValidateToken:output_type -> auth.ValidateTokenResponse
@@ -610,7 +610,7 @@ func file_auth_auth_proto_init() {
 	file_user_user_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_auth_auth_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SingupRequest); i {
+			switch v := v.(*SignupRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -622,7 +622,7 @@ func file_auth_auth_proto_init() {
 			}
 		}
 		file_auth_auth_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SingupResponse); i {
+			switch v := v.(*SignupResponse); i {
 			case 0:
 				return &v.state
 			case 1:
