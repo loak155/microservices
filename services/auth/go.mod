@@ -6,8 +6,7 @@ require (
 	github.com/golang-jwt/jwt/v4 v4.5.0
 	github.com/joho/godotenv v1.5.1
 	github.com/loak155/microservices/proto v0.0.0-20240117044419-dc53153e6de1
-	github.com/loak155/microservices/services/user v0.0.0-20240126050935-07fdc1202360
-	golang.org/x/exp v0.0.0-20240119083558-1b970713d09a
+	golang.org/x/crypto v0.18.0
 	google.golang.org/grpc v1.60.1
 )
 
