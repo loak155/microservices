@@ -11,7 +11,9 @@ import (
 )
 
 type IUserGRPCClient interface {
+	CreateUser(req *pb.CreateUserRequest) (*pb.CreateUserResponse, error)
 	GetUser(req *pb.GetUserRequest) (*pb.GetUserResponse, error)
+	GetUserByEmail(req *pb.GetUserByEmailRequest) (*pb.GetUserByEmailResponse, error)
 }
 
 type userGRPCClient struct {
@@ -33,8 +35,26 @@ func NewUserGRPCClient() (IUserGRPCClient, error) {
 	return &userGRPCClient{client}, nil
 }
 
+func (c *userGRPCClient) CreateUser(req *pb.CreateUserRequest) (*pb.CreateUserResponse, error) {
+	res, err := c.client.CreateUser(context.Background(), req)
+	if err != nil {
+		return nil, err
+	}
+
+	return res, nil
+}
+
 func (c *userGRPCClient) GetUser(req *pb.GetUserRequest) (*pb.GetUserResponse, error) {
 	res, err := c.client.GetUser(context.Background(), req)
+	if err != nil {
+		return nil, err
+	}
+
+	return res, nil
+}
+
+func (c *userGRPCClient) GetUserByEmail(req *pb.GetUserByEmailRequest) (*pb.GetUserByEmailResponse, error) {
+	res, err := c.client.GetUserByEmail(context.Background(), req)
 	if err != nil {
 		return nil, err
 	}
